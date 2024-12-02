@@ -1,7 +1,7 @@
 
 
 import QtQuick
-import QtQuick.Controls.Fusion
+import QtQuick.Controls
 import QtWebEngine
 import QtQuick.Layouts
 
