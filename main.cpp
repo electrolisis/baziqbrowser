@@ -13,6 +13,8 @@
 #include <QtCore/QCommandLineOption>
 #include <QtCore/QLoggingCategory>
 
+#include <QQuickStyle>
+
 //
 #include <QNetworkProxy>
 
@@ -43,6 +45,9 @@ int main(int argc, char **argv)
     parser.addPositionalArgument("url", "The URL to open.");
     parser.process(app);
 
+    //https://doc.qt.io/qt-6/qtquickcontrols2-styles.html
+    //QQuickStyle::setStyle("Basic");
+    
     QQmlApplicationEngine appEngine;
     appEngine.load(QUrl("qrc:/ApplicationRoot.qml"));
     if (appEngine.rootObjects().isEmpty())
