@@ -5,7 +5,7 @@ project(baziqbrowser LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick WebEngineQuick)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2 WebEngineQuick)
 
 qt_add_executable(baziqbrowser
     main.cpp
@@ -17,6 +17,7 @@ target_link_libraries(baziqbrowser PUBLIC
     Qt::Gui
     Qt::Qml
     Qt::Quick
+    Qt::QuickControls2
     Qt::WebEngineQuick
 )
 
