@@ -1,24 +1,41 @@
 # baziqbrowser
 Navegador web experimental, usa Qt/QtWebEngine,  com suporte para acesso à rede Tor
 
+> [!IMPORTANT]
 Foi testado apenas em sistema linux
 
-Instruções para instalar dependências, compilar e rodar:
+**Instruções para instalar dependências, compilar e rodar:**
 
-linux fedora:
+linux fedora v41:
 
 instalar Qt:
 
-# dnf install qt6-qtwebengine-devel
+` sudo dnf install qt6-qtwebengine-devel `
+
+compilar:
+
+```
+mkdir build
+cd build
+cmake ..
+make
+```
 
 instalar Tor:
 
-# dnf install tor
+` sudo dnf install tor `
 
 rodar Tor:
-# systemctl start tor
+
+` sudo systemctl start tor `
+
 verificar status:
-# systemctl status tor
 
+` sudo systemctl status tor `
 
+> [!TIP]
+para rodar:
+` ./baziqbrowser `
+
+> [!NOTE]
 Esse projeto atualme é parte de um trabalho acadêmico do curso sistemas de informação UFSC
