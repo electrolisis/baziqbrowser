@@ -39,3 +39,8 @@ para rodar:
 
 > [!NOTE]
 Esse projeto atualme é parte de um trabalho acadêmico do curso sistemas de informação UFSC
+
+
+Screenshot
+
+<img src="https://github.com/electrolisis/baziqbrowser/blob/main/Screenshot.png">
