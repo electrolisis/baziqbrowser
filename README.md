@@ -38,7 +38,7 @@ para rodar:
 ` ./baziqbrowser `
 
 > [!NOTE]
-Esse projeto atualme é parte de um trabalho acadêmico do curso sistemas de informação UFSC
+Esse projeto atualmente é parte de um trabalho acadêmico do curso sistemas de informação / UFSC
 
 
 Screenshot
