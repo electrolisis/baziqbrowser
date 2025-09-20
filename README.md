@@ -6,7 +6,7 @@ Foi testado apenas em sistema linux
 
 **Instruções para instalar dependências, compilar e rodar:**
 
-linux fedora v41:
+linux fedora:
 
 instalar Qt:
 
