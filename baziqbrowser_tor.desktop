@@ -1,9 +1,0 @@
-[Desktop Entry]
-Exec=baziqbrowser https://check.torproject.org/ --tor --profile=tor %F
-GenericName[en_US]=Web Browser
-GenericName=Web Browser
-Icon=/usr/share/icons/baziqbrowser.svg
-Categories=Network;WebBrowser
-Name[en_US]=Baziqbrowser (Tor)
-Name=Baziqbrowser (Tor)
-Type=Application
