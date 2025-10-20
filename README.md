@@ -2,17 +2,20 @@
 Navegador web experimental, usa Qt/QtWebEngine,  com suporte para acesso à rede Tor
 
 > [!IMPORTANT]
-Foi testado apenas em sistema linux
 
-**Instruções para instalar dependências, compilar e rodar:**
+Compila e roda em: Linux, Ms windows e MacOs
 
-consultar a sua distribuição linux;
+Foi testado apenas em sistema Linux.
 
-exemplo de comandos no alpinelinux:
+**Instruções para instalar dependências, compilar e rodar em Linux:**
+
+Consultar a sua distribuição linux.
+
+Referência de comandos em uma distribuição baseada em debian:
 
 instalar Qt:
 
-` # apk add qt6-qtwebengine-dev qt6-qtsvg-dev  `
+` # apt install cmake qt6-webengine-dev `
 
 compilar:
 
@@ -33,27 +36,13 @@ para instalar (opcional):
 
 instalar Tor (opcional):
 
-no alpinelinux:
-
-` # apk add tor`
+` # apt install tor `
 
 rodar Tor:
-
-no alpinelinux:
-
-` # rc-service tor start`
-
-se for em distros com systemd:
 
 ` # systemctl start tor `
 
 verificar status:
-
-no alpinelinux:
-
-` # rc-service tor status`
-
-se for em distros com systemd:
 
 ` # systemctl status tor `
 
