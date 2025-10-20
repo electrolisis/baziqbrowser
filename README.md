@@ -2,8 +2,8 @@
 Navegador web experimental, usa Qt/QtWebEngine,  com suporte para acesso à rede Tor
 
 > [!IMPORTANT]
-Compila e roda em: Linux, Ms windows e MacOs
-Foi testado apenas em sistema Linux.
+Compila e roda em: Linux, Ms windows e MacOs.
+> Foi testado apenas em sistema Linux.
 
 **Instruções para instalar dependências, compilar e rodar em Linux:**
 
