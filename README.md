@@ -23,12 +23,9 @@ $ cd build
 $ cmake ..
 $ make
 ```
-
-> [!TIP]
 para rodar:
 ` $ ./baziqbrowser `
 
-> [!TIP]
 para instalar (opcional):
 ` # make install `
 
@@ -43,6 +40,10 @@ rodar Tor:
 verificar status:
 
 ` # systemctl status tor `
+
+rodar Tor na inicialização do sistema:
+
+` # systemctl enable tor `
 
 > [!NOTE]
 Esse projeto atualmente é parte de um trabalho acadêmico do curso sistemas de informação UFSC
