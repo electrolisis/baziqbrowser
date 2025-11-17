@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=baziqbrowser %F
+GenericName[en_US]=Web Browser
+GenericName=Web Browser
+Icon=/usr/share/icons/baziqbrowser.svg
+Categories=Network;WebBrowser
+Name[en_US]=Baziqbrowser
+Name=Baziqbrowser
+Type=Application
