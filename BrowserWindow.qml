@@ -43,7 +43,6 @@ ApplicationWindow {
         if(portraitMode == true || tabBar.count === 1) {
             tabBar.visible = false
             tabBar.height = 0
-            //tabBar.height = browserWindow.height
             tabBar.spacing = 10
             tabBar.padding = 10
         }else{
@@ -227,10 +226,8 @@ ApplicationWindow {
             }
 
             contentItem: Text {
-                //id: tabTitleContent
                 text: tabButton.tabTitle
                 color: sysPalette.text
-                //color: sysPalette.highlight
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
@@ -256,22 +253,10 @@ ApplicationWindow {
                 height: 1
                 color: sysPalette.mid
                 anchors.bottom: parent.bottom
-                //visible: TabBar.index < tabBarListModel.model.count - 1
             }
 
             onClicked: {
                 addressBar.text = tabLayout.itemAt(TabBar.index).url;
-                //
-                //console.log("----- TabBar.index : " + TabBar.index)
-                //console.log("----- tabLayout.currentIndex : " + tabLayout.currentIndex)
-                // if(portraitMode){
-                //     tabBar.height = 0
-                //     tabBar.visible = false
-                //     navigationBar.visible = true
-                //     tabLayout.visible = true
-                //     //tabBar.anchors.fill = parent
-                //     //tabBar.width = 400
-                // }
             }
 
             function closeTab() {
@@ -329,18 +314,6 @@ ApplicationWindow {
     TabBar {
         id: tabBar
 
-        //implicitWidth: portraitMode ? (parent.width-(parent.width*0.1)) : parent.width
-        //implicitHeight: portraitMode ? parent.height : navigationBar.height
-        //implicitWidth: parent.width
-        //implicitHeight: portraitMode ? parent.height : navigationBar.height
-        //height: portraitMode ? browserWindow.height : navigationBar.height
-
-        //Layout.alignment: portraitMode ? Qt.AlignCenter : Qt.AlignLeft
-
-        // background: Rectangle {
-        //     color: sysPalette.window
-        // }
-
         spacing: 1
 
             //
@@ -359,8 +332,6 @@ ApplicationWindow {
                 //preferredHighlightBegin: 40
                 //preferredHighlightEnd: height - 40
 
-                //highlightFollowsCurrentItem: true
-
                 // ScrollBar.vertical: ScrollBar {
                 //     id : tabBarscrollBar
                 // }
@@ -370,8 +341,6 @@ ApplicationWindow {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-
-        //anchors.margins: portraitMode ? browserWindow.width*0.05 : 0
 
         visible: portraitMode ? false : true
 
@@ -399,8 +368,6 @@ ApplicationWindow {
 
             tabBar.addItem(newTabButton);
 
-            //tabsView.append(newTabButton)
-
             if (focusOnNewTab) {
                 tabBar.setCurrentIndex(tabBar.count - 1);
             }
@@ -408,20 +375,15 @@ ApplicationWindow {
             if (url !== undefined) {
                 webview.url = url;
             } else {
-                //if (tabBar.count === 1) {
                     if(appSettings.homePage != "mostVisited"){
                         webview.url = appSettings.homePage;
                     }else{
-                        //webview.url = ""
                         if (focusOnNewTab) {
                             mostVisitedView.visible = true
                         }else{
                             mostVisitedView.visible = false
                         }
                     }
-                //}else{
-                    //webview.url = "about:blank";
-                //}
             }
             //
             if (tabBar.count === 1) {
@@ -430,31 +392,17 @@ ApplicationWindow {
             } else {
                 if(portraitMode == false){
                  tabBar.visible = true
-            //     //tabBar.height = 30 //fusion, breeze
-            //     //tabBar.height = 40 //basic
                  tabBar.height = navigationBar.height
                 }
              }
-            //
-            //if(addressBar.text === "about:blank")
-                //addressBar.text = ""
-            //if(appSettings.homePage === "mostVisited")
-            //    mostVisitedView.visible = true
-            //
+
             return webview;
         }
 
         function removeView(index) {
-            //if (tabBar.count > 1) {
                 tabBar.removeItem(tabBar.itemAt(index));
                 tabLayout.children[index].destroy();
                 tabBar.setCurrentIndex(currentIndex); //?
-            //} else {
-                //browserWindow.close();
-            //}
-            //
-            //tabsView.tabsModelRemoveTab(index)
-            //
             if (tabBar.count === 1) {
                 if(!portraitMode){
                     tabBar.visible = false
@@ -463,9 +411,6 @@ ApplicationWindow {
             } else {
                 if(!portraitMode){
                 tabBar.visible = true
-                //tabBar.height = 30 //fusion, breeze
-                //tabBar.height = 40 //basic
-               //tabBar.height = navigationBar.height
                 }
             }
             //
@@ -620,9 +565,6 @@ ApplicationWindow {
                     featurePermissionDialog.visible = true;
                 }
 
-                //?
-                //settings.showScrollBars: (portraitMode == true) ? false : true
-
                 settings.touchIconsEnabled: true
 
                 Timer {
@@ -645,12 +587,7 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.topMargin: 2 //fusion, breeze
-        //anchors.topMargin: (tabBar.count > 1) ? 5 : 0 //basic
-        //Layout.fillWidth: true
         padding: 0 // kde/breeze style (do not remove)
-
-        //height: 30 // style?
-        //height: settingsMenuButton.height + 2
 
         RowLayout {
             id: navigationBarRow
@@ -695,7 +632,6 @@ ApplicationWindow {
                 //
                 TextField {
                     id: addressBar
-                    //implicitHeight: 28 // fusion, breeze
                     visible: (portraitMode == true) ? false : true
 
                     MouseArea {
@@ -812,16 +748,10 @@ ApplicationWindow {
                 highlighted: true
                 visible: portraitMode ? true : false
                 onClicked: {
-                    //tabsView.visible = !tabsView.visible;
                     navigationBar.visible = false
                     tabLayout.visible = false // to block scroll
-                    //
-                    //tabBar.height = 100
                     tabBar.height = browserWindow.height
-                    //tabButton.width = browserWindow.width
-                    //tabBar.anchors.bottom = parent.bottom
                     tabBar.visible = true
-                    //
                 }
             }
 
@@ -860,7 +790,6 @@ ApplicationWindow {
                             ToolButton {
                                 id: jsButton
                                 text: appSettings.javaScriptEnabled ? "js" : "<s>js</s>"
-                                //implicitWidth: reloadButton.width //?
                                 implicitHeight: reloadButton.height //?
                                 onClicked: {
                                     appSettings.javaScriptEnabled = appSettings.javaScriptEnabled ? false : true
@@ -975,7 +904,6 @@ ApplicationWindow {
     Dialog {
         id: sslDialog
         anchors.centerIn: parent
-        //contentWidth: Math.max(mainTextForSSLDialog.width, detailedTextForSSLDialog.width)
         contentWidth: browserWindow.width - (browserWindow.width*0.1)
         contentHeight: mainTextForSSLDialog.height + detailedTextForSSLDialog.height
         property var certErrors: []
@@ -1021,9 +949,7 @@ ApplicationWindow {
     Dialog {
         id: featurePermissionDialog
         anchors.centerIn: parent
-        //width: Math.min(browserWindow.width, browserWindow.height) / 3 * 2
         contentWidth: browserWindow.width - (browserWindow.width*0.1)
-        //contentWidth: mainTextForPermissionDialog.width
         contentHeight: mainTextForPermissionDialog.height
         standardButtons: Dialog.No | Dialog.Yes
         title: "Permission Request"
@@ -1042,10 +968,6 @@ ApplicationWindow {
 
         onAccepted: currentWebView && currentWebView.grantFeaturePermission(securityOrigin, feature, true)
         onRejected: currentWebView && currentWebView.grantFeaturePermission(securityOrigin, feature, false)
-        // onVisibleChanged: {
-        //     if (visible)
-        //         width = contentWidth + 20;
-        // }
 
         function questionForFeature() {
             var question = "Allow " + securityOrigin + " to "
