@@ -47,7 +47,7 @@ Pane {
                                     anchors.fill: parent
 
                                     Image {
-                                        width: 32; height: 32
+                                        width: 28; height: 28
                                         sourceSize: Qt.size(width, height)
                                         //source: model.icon
                                         source: "image://favicon/" + model.url
