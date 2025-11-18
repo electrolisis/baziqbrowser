@@ -324,19 +324,12 @@ ApplicationWindow {
 
                 spacing: tabBar.spacing
                 orientation: portraitMode ? ListView.Vertical : ListView.Horizontal
-                //boundsBehavior: Flickable.StopAtBounds
-                //flickableDirection: Flickable.AutoFlickIfNeeded
-                //snapMode: ListView.SnapToItem
                 highlightMoveDuration: 100
-                //highlightRangeMode: ListView.ApplyRange
-                //preferredHighlightBegin: 40
-                //preferredHighlightEnd: height - 40
 
                 // ScrollBar.vertical: ScrollBar {
                 //     id : tabBarscrollBar
                 // }
             }
-            //
 
         anchors.top: parent.top
         anchors.left: parent.left
